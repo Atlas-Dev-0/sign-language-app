@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "sign-language-app",
-    "slug": "sign-language-app",
+    "name": "sign-talk",
+    "slug": "sign-talk",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -31,6 +31,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "63301502-fe34-4801-a411-f433ad034ff3"
+      }
     }
   }
 }
