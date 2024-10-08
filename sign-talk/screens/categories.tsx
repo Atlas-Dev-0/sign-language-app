@@ -3,7 +3,6 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { useNavigation } from '@react-navigation/native'; // Import useNavigation
 
-
 export default function Categories() {
   const nav = useNavigation(); // Get the navigation object
   return (
