@@ -1,7 +1,7 @@
 import { Image, StyleSheet, TouchableOpacity } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { useNavigation } from '@react-navigation/native'; // Import useNavigation
+import { useNavigation } from '@react-navigation/native';
 
 export default function Categories() {
   const nav = useNavigation(); // Get the navigation object
@@ -9,13 +9,13 @@ export default function Categories() {
     <ThemedView style={styles.fullScreenContainer}>
       <ThemedView style={styles.container}>
         <ThemedView style={styles.gridContainer}>
-          <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Alphabets')}>
+          <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Alphabets' as never)}>
             <Image source={require('../assets/images/buttons/ALPHABETS_BUTTON.png')} style={styles.gridImage} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.gridItem}>
             <Image source={require('@/assets/images/buttons/GREETINGS_AND_PHRASES_BUTTON.png')} style={styles.gridImage} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.gridItem}>
+          <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Numbers' as never)}>
             <Image source={require('@/assets/images/buttons/NUMBERS_BUTTON.png')} style={styles.gridImage} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.gridItem}>
@@ -32,7 +32,6 @@ export default function Categories() {
 
 const styles = StyleSheet.create({
   fullScreenContainer: {
-    flex: 1,
     backgroundColor: "#FFDD67", // Yellow background to match body-like color
   },
   container: {

@@ -2,92 +2,83 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import signDescriptions from '../assets/dataset/categories/alphabets/alphabets-data.json'; // Import the JSON file
+
+// Define the type for the navigation stack
+type RootStackParamList = {
+  'Sign Preview': { image: string, title: string, description: string };
+};
+
+// Dynamically generate alphabet data (A-Z)
+const data = Array.from({ length: 26 }, (_, i) => {
+  const letter = String.fromCharCode(65 + i); // Generate letter A-Z
+  return {
+    letter: letter,
+    image: `../assets/images/categories/alphabets/${letter}.png`, // Generate image path
+    title: `Sign ${letter}`, // Generate title
+    description: signDescriptions[letter].description, // Get description from JSON file
+  };
+});
 
 export default function AlphabetsScreen() {
-  const alphabet = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+  // Use navigation with the typed navigation prop
+  const nav = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
   return (
     <ThemedView style={styles.FullScreenContainer}>
-      {/* Grid Layout for Alphabets */}
       <ThemedView style={styles.container}>
         <ThemedView style={styles.gridContainer}>
-          {alphabet.map((letter) => (
-            <TouchableOpacity key={letter} style={styles.gridItem}>
-              <ThemedText style={styles.navText}>{letter}</ThemedText>
+          {data.map((item) => (
+            <TouchableOpacity
+              key={item.letter}
+              style={styles.gridItem}
+              onPress={() => nav.navigate('Sign Preview', {
+                image: item.image, // Pass the image URL
+                title: item.title,
+                description: item.description // Pass the description from the JSON file
+              })}
+            >
+              <ThemedText style={styles.navText}>{item.letter}</ThemedText>
             </TouchableOpacity>
           ))}
         </ThemedView>
       </ThemedView>
-    </ThemedView >
+    </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
-  navBar: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 55,
-    marginBottom: 5,
-    backgroundColor: '#FFDD67', // Adjust to match your design
+  FullScreenContainer: {
+    backgroundColor: '#FFDD67',
   },
   container: {
     flex: 1,
-    marginTop: 2,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFDD67', // Yellow background like the body
-  },
-  FullScreenContainer: {
-    flex: 1, // Ensures the full view takes up the entire screen
-    backgroundColor: '#FFDD67', // Yellow background to match body-like color
-  },
-  backButton: {
-    marginRight: 10,
-    marginLeft: 10,
-  },
-  backButtonText: {
-    fontSize: 22,
-    color: '#333', // Adjust for contrast
-  },
-  navText: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: '#333', // Adjust for contrast
-  },
-  logo: {
-    width: 290,
-    height: 290,
-    resizeMode: 'contain',
-  },
-  titleText: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#333', // Dark text color
-    marginTop: 20,
+    backgroundColor: '#FFDD67',
   },
   gridContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '90%', // Adjust the width of the grid container as needed
-    backgroundColor: '#FFDD67', // Yellow background to match body-like color
+    width: '90%',
+    backgroundColor: '#FFDD67',
   },
   gridItem: {
-    width: 60, // Square size
-    height: 60, // Square size
+    width: 60,
+    height: 60,
     justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
     alignItems: 'center',
-    margin: 10, // Spacing between the squares
-    borderRadius: 10, // Optional for rounded corners
+    margin: 10,
+    borderRadius: 10,
+    backgroundColor: '#FFFFFF',
   },
-  gridText: {
-    fontSize: 18,
-    color: '#333', // Adjust text color for contrast
-  },
-  gridImage: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'contain', // Adjust the image to fit inside the grid item
+  navText: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#333',
   },
 });

@@ -3,6 +3,9 @@ import { StyleSheet } from 'react-native';
 
 import Categories from '../../screens/categories';
 import Alphabets from '../../screens/alphabetsScreen';
+import Numbers from '../../screens/numbersScreen';
+import ImageScreens from '../../screens/imageScreens';
+import { ThemedView } from '@/components/ThemedView';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,18 +20,17 @@ export default function HomeScreen() {
         headerTitleStyle: {
           fontWeight: 'bold', // Customize the title text style
         },
+        contentStyle: {
+          backgroundColor: '#FFDD67', // Default background for every screen
+        },
       }}
     >
+      {/* Define your screens */}
       <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen name="Alphabets" component={Alphabets} />
+      <Stack.Screen name="Numbers" component={Numbers} />
+      <Stack.Screen name="Sign Preview" component={ImageScreens} />
     </Stack.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  navbar: {
-    flex: 1,
-    backgroundColor: "#FFDD67", // Yellow background to match body-like color
-    marginTop: 2,
-  },
-});
