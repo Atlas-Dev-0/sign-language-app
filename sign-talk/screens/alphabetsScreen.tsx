@@ -8,7 +8,37 @@ import signDescriptions from '../assets/dataset/categories/alphabets/alphabets-d
 
 // Define the type for the navigation stack
 type RootStackParamList = {
-  'Sign Preview': { image: string, title: string, description: string };
+  'Sign Preview': { image: any; title: string; description: string }; // Use 'any' for image type
+};
+
+// Map each letter to its corresponding image
+const images = {
+  A: require('../assets/images/categories/alphabets/A.png'),
+  B: require('../assets/images/categories/alphabets/B.png'),
+  C: require('../assets/images/categories/alphabets/C.png'),
+  D: require('../assets/images/categories/alphabets/D.png'),
+  E: require('../assets/images/categories/alphabets/E.png'),
+  F: require('../assets/images/categories/alphabets/F.png'),
+  G: require('../assets/images/categories/alphabets/G.png'),
+  H: require('../assets/images/categories/alphabets/H.png'),
+  I: require('../assets/images/categories/alphabets/I.png'),
+  J: require('../assets/images/categories/alphabets/J.png'),
+  K: require('../assets/images/categories/alphabets/K.png'),
+  L: require('../assets/images/categories/alphabets/L.png'),
+  M: require('../assets/images/categories/alphabets/M.png'),
+  N: require('../assets/images/categories/alphabets/N.png'),
+  O: require('../assets/images/categories/alphabets/O.png'),
+  P: require('../assets/images/categories/alphabets/P.png'),
+  Q: require('../assets/images/categories/alphabets/Q.png'),
+  R: require('../assets/images/categories/alphabets/R.png'),
+  S: require('../assets/images/categories/alphabets/S.png'),
+  T: require('../assets/images/categories/alphabets/T.png'),
+  U: require('../assets/images/categories/alphabets/U.png'),
+  V: require('../assets/images/categories/alphabets/V.png'),
+  W: require('../assets/images/categories/alphabets/W.png'),
+  X: require('../assets/images/categories/alphabets/X.png'),
+  Y: require('../assets/images/categories/alphabets/Y.png'),
+  Z: require('../assets/images/categories/alphabets/Z.png'),
 };
 
 // Dynamically generate alphabet data (A-Z)
@@ -16,7 +46,7 @@ const data = Array.from({ length: 26 }, (_, i) => {
   const letter = String.fromCharCode(65 + i); // Generate letter A-Z
   return {
     letter: letter,
-    image: `../assets/images/categories/alphabets/${letter}.png`, // Generate image path
+    image: images[letter], // Use the mapping object
     title: `Sign ${letter}`, // Generate title
     description: signDescriptions[letter].description, // Get description from JSON file
   };
@@ -34,11 +64,13 @@ export default function AlphabetsScreen() {
             <TouchableOpacity
               key={item.letter}
               style={styles.gridItem}
-              onPress={() => nav.navigate('Sign Preview', {
-                image: item.image, // Pass the image URL
-                title: item.title,
-                description: item.description // Pass the description from the JSON file
-              })}
+              onPress={() =>
+                nav.navigate('Sign Preview', {
+                  image: item.image, // Pass the image URL directly
+                  title: item.title,
+                  description: item.description, // Pass the description from the JSON file
+                })
+              }
             >
               <ThemedText style={styles.navText}>{item.letter}</ThemedText>
             </TouchableOpacity>

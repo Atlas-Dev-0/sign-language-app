@@ -36,9 +36,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFDD67', // Yellow background like the body
+    overflow: "scroll",
   },
   FullScreenContainer: {
     backgroundColor: '#FFDD67', // Yellow background to match body-like color
+    overflow: "scroll",
   },
   backButton: {
     marginRight: 10,
@@ -65,6 +67,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   gridContainer: {
+    overflow: "scroll",
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',

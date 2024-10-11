@@ -1,51 +1,48 @@
 import React from 'react';
-import { StyleSheet, Image, View } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { RouteProp, useRoute } from '@react-navigation/native';
 
 // Define the type for the route params
 type RootStackParamList = {
-  'Sign Preview': { image: string, title: string, description: string };
+  'Sign Preview': { image: any; title: string; description: string }; // Use 'any' for image type
 };
 
 // Define the route type for Sign Preview screen
 type SignPreviewRouteProp = RouteProp<RootStackParamList, 'Sign Preview'>;
 
 export default function ImageScreens() {
-
   const route = useRoute<SignPreviewRouteProp>();
   const { image, title, description } = route.params; // Retrieve the image, title, and description from route params
 
   return (
     <ThemedView style={styles.container}>
       <ThemedView style={styles.card}>
-        {/* Image at the top of the card */}
-        <Image source={{ uri: image }} style={styles.image} />
-        {/* Title and description below the image */}
+        <Image source={image} style={styles.image} resizeMode="contain" />
         <ThemedView style={styles.textContainer}>
           <ThemedText style={styles.title}>{title}</ThemedText>
-          <ThemedText style={styles.subtitle}>Intructions:</ThemedText>
+          <ThemedText style={styles.subtitle}>Instructions:</ThemedText>
           <ThemedText style={styles.description}>{description}</ThemedText>
         </ThemedView>
       </ThemedView>
-    </ThemedView>
+    </ThemedView >
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    borderStyle: 'solid',
-    borderColor: '#000',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFDD67',
   },
   card: {
+    marginTop: 50,
     width: '93%',
-    backgroundColor: '#ffff',
+    backgroundColor: '#fff',
     borderRadius: 10,
+    borderCurve: 'circular',
     shadowColor: '#000',
     shadowOpacity: 0.2,
     shadowRadius: 5,
@@ -53,25 +50,28 @@ const styles = StyleSheet.create({
     elevation: 3,
     alignItems: 'center',
     padding: 15,
+    justifyContent: 'center',
   },
   image: {
     width: '100%',
     height: 200,
-    borderRadius: 10,
     marginBottom: 15,
   },
   textContainer: {
-    marginTop: 10,
+    marginTop: 0,
     marginLeft: 10,
     width: '100%',
     alignItems: 'center',
-    backgroundColor: 'none',
+    backgroundColor: '#fff',
   },
   title: {
-    fontSize: 34,
+    alignItems: 'center',
+    alignSelf: 'center',
+    fontSize: 30,
     fontWeight: 'bold',
     color: '#000',
     marginBottom: 10,
+    marginTop: 40,
   },
   subtitle: {
     fontSize: 15,
