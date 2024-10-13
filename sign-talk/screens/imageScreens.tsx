@@ -72,6 +72,7 @@ const styles = StyleSheet.create({
     color: '#000',
     marginBottom: 10,
     marginTop: 40,
+    paddingTop: 10, // Add padding to ensure it doesn’t touch the top
   },
   subtitle: {
     fontSize: 15,
