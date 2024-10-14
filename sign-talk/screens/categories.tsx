@@ -12,7 +12,7 @@ export default function Categories() {
           <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Alphabets' as never)}>
             <Image source={require('../assets/images/buttons/ALPHABETS_BUTTON.png')} style={styles.gridImage} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.gridItem}>
+          <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Greetings And Phrases' as never)}>
             <Image source={require('@/assets/images/buttons/GREETINGS_AND_PHRASES_BUTTON.png')} style={styles.gridImage} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Numbers' as never)}>

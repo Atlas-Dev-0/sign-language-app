@@ -1,0 +1,32 @@
+{
+  "one": {
+    "description": "For the number 1, close your fist with the thumb on the side of the index finger."
+  },
+  "two": {
+    "description": "For the number 2, extend your fingers upwards with the thumb crossed in front of your palm."
+  },
+  "three": {
+    "description": "For the number 3, curve your fingers and thumb to form the shape of the letter C."
+  },
+  "four": {
+    "description": "For the number 4, hold up your index finger while the other fingers touch the thumb."
+  },
+  "five": {
+    "description": "For the number 5, curl your fingers into your palm with the thumb resting on the tips."
+  },
+  "six": {
+    "description": "For the number 6, touch your thumb and index finger together, forming a circle, with the other fingers extended."
+  },
+  "seven": {
+    "description": "For the number 7, hold your index finger and thumb parallel, pointing to the side."
+  },
+  "eight": {
+    "description": "For the number 8, extend your index and middle finger horizontally, with the thumb supporting the others."
+  },
+  "nine": {
+    "description": "For the number 9, hold your pinky finger straight up with the other fingers curled into the palm."
+  },
+  "ten": {
+    "description": "For the number 10, start with the I hand shape, then move your pinky finger in a J-shaped motion."
+  }
+}

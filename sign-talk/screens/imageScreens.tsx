@@ -19,7 +19,7 @@ export default function ImageScreens() {
   return (
     <ThemedView style={styles.container}>
       <ThemedView style={styles.card}>
-        <Image source={image} style={styles.image} resizeMode="contain" />
+        <Image source={image} style={styles.image} />
         <ThemedView style={styles.textContainer}>
           <ThemedText style={styles.title}>{title}</ThemedText>
           <ThemedText style={styles.subtitle}>Instructions:</ThemedText>
@@ -38,7 +38,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFDD67',
   },
   card: {
-    marginTop: 50,
     width: '93%',
     backgroundColor: '#fff',
     borderRadius: 10,
@@ -49,17 +48,18 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     elevation: 3,
     alignItems: 'center',
-    padding: 15,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 30,
   },
   image: {
+    marginTop: 0,
     width: '100%',
-    height: 200,
-    marginBottom: 15,
+    height: '50%',
   },
   textContainer: {
     marginTop: 0,
-    marginLeft: 10,
     width: '100%',
     alignItems: 'center',
     backgroundColor: '#fff',
@@ -67,19 +67,19 @@ const styles = StyleSheet.create({
   title: {
     alignItems: 'center',
     alignSelf: 'center',
-    fontSize: 30,
+    fontSize: 40,
     fontWeight: 'bold',
     color: '#000',
     marginBottom: 10,
-    marginTop: 40,
-    paddingTop: 10, // Add padding to ensure it doesn’t touch the top
+    marginTop: 30,
+    paddingTop: 15, // Add padding to ensure it doesn’t touch the top
   },
   subtitle: {
-    fontSize: 15,
+    marginTop: 30,
+    marginBottom: 20,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#000',
-    marginBottom: 5,
-    marginTop: 50,
   },
   description: {
     fontSize: 16,

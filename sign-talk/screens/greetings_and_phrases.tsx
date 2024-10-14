@@ -1,10 +1,11 @@
+
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import signDescriptions from '../assets/dataset/categories/alphabets/alphabets-data.json'; // Import the JSON file
+import signDescriptions from '../assets/dataset/categories/greetings_and_phrases/greetings_and_phrases.json'
 
 // Define the type for the navigation stack
 type RootStackParamList = {
@@ -52,7 +53,7 @@ const data = Array.from({ length: 26 }, (_, i) => {
   };
 });
 
-export default function AlphabetsScreen() {
+export default function GreetingsAndPhrasesScreen() {
   // Use navigation with the typed navigation prop
   const nav = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 

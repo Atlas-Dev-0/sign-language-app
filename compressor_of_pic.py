@@ -43,5 +43,5 @@ def optimize_images_in_folder(folder_path):
 
 if __name__ == "__main__":
     # Specify the folder path where the images are located
-    folder_path = './sign-talk/assets/images/categories/alphabets/'
+    folder_path = './sign-talk/assets/images/categories/numbers/'
     optimize_images_in_folder(folder_path)
