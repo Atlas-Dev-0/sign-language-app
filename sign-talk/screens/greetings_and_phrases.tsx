@@ -1,79 +1,85 @@
-
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import signDescriptions from '../assets/dataset/categories/greetings_and_phrases/greetings_and_phrases.json'
 
 // Define the type for the navigation stack
 type RootStackParamList = {
-  'Sign Preview': { image: any; title: string; description: string }; // Use 'any' for image type
+  'Sign Video': { video: any; title: string; description: string }; // Use 'any' for video type
 };
 
-// Map each letter to its corresponding image
-const images: { [key: string]: any } = {
-  A: require('../assets/images/categories/alphabets/A.png'),
-  B: require('../assets/images/categories/alphabets/B.png'),
-  C: require('../assets/images/categories/alphabets/C.png'),
-  D: require('../assets/images/categories/alphabets/D.png'),
-  E: require('../assets/images/categories/alphabets/E.png'),
-  F: require('../assets/images/categories/alphabets/F.png'),
-  G: require('../assets/images/categories/alphabets/G.png'),
-  H: require('../assets/images/categories/alphabets/H.png'),
-  I: require('../assets/images/categories/alphabets/I.png'),
-  J: require('../assets/images/categories/alphabets/J.png'),
-  K: require('../assets/images/categories/alphabets/K.png'),
-  L: require('../assets/images/categories/alphabets/L.png'),
-  M: require('../assets/images/categories/alphabets/M.png'),
-  N: require('../assets/images/categories/alphabets/N.png'),
-  O: require('../assets/images/categories/alphabets/O.png'),
-  P: require('../assets/images/categories/alphabets/P.png'),
-  Q: require('../assets/images/categories/alphabets/Q.png'),
-  R: require('../assets/images/categories/alphabets/R.png'),
-  S: require('../assets/images/categories/alphabets/S.png'),
-  T: require('../assets/images/categories/alphabets/T.png'),
-  U: require('../assets/images/categories/alphabets/U.png'),
-  V: require('../assets/images/categories/alphabets/V.png'),
-  W: require('../assets/images/categories/alphabets/W.png'),
-  X: require('../assets/images/categories/alphabets/X.png'),
-  Y: require('../assets/images/categories/alphabets/Y.png'),
-  Z: require('../assets/images/categories/alphabets/Z.png'),
-};
+// Define the navigation prop
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Sign Video'>;
 
-// Dynamically generate alphabet data (A-Z)
-const data = Array.from({ length: 26 }, (_, i) => {
-  const letter = String.fromCharCode(65 + i); // Generate letter A-Z
-  return {
-    letter: letter,
-    image: images[letter], // Use the mapping object
-    title: `Sign ${letter}`, // Generate title
-    description: signDescriptions[letter as keyof typeof signDescriptions].description
-  };
-});
+// Define the type for video object
+interface VideoData {
+  video: any;
+  title: string;
+  description: string;
+}
+
+// Map each greeting/phrase to its corresponding video and hardcoded description
+const video_data: Record<string, VideoData> = {
+  Goodmorning: {
+    video: require('../assets/images/categories/greetings_and_phrases/Goodmorning.mp4'),
+    title: 'Good Morning',
+    description: 'Sign "Good Morning": Start with your dominant hand flat, fingers together, and raise it from your chest upwards, as if to mimic the rising sun.',
+  },
+  Goodnight: {
+    video: require('../assets/images/categories/greetings_and_phrases/Goodnight.mp4'),
+    title: 'Good Night',
+    description: 'Sign "Good Night": Form a "C" shape with both hands, and gently lower one hand over the other as if covering something.',
+  },
+  'Happy birthday': {
+    video: require('../assets/images/categories/greetings_and_phrases/Happy birthday.mp4'),
+    title: 'Happy Birthday',
+    description: 'Sign "Happy Birthday": Start by patting your chest with both hands, and then move your dominant hand towards your mouth, mimicking blowing out a candle.',
+  },
+  'I_m sorry': {
+    video: require('../assets/images/categories/greetings_and_phrases/I_m sorry.mp4'),
+    title: 'I\'m Sorry',
+    description: 'Sign "I\'m Sorry": Make a fist with your dominant hand and rub it in a circular motion over your chest.',
+  },
+  'Nice to meet you': {
+    video: require('../assets/images/categories/greetings_and_phrases/Nice to meet you.mp4'),
+    title: 'Nice to Meet You',
+    description: 'Sign "Nice to Meet You": Place one hand palm down and slide it forward, then bring both index fingers together, pointing towards the person you are greeting.',
+  },
+  Please: {
+    video: require('../assets/images/categories/greetings_and_phrases/Please.mp4'),
+    title: 'Please',
+    description: 'Sign "Please": Place your dominant hand on your chest and move it in a circular motion.',
+  },
+  'Thank you': {
+    video: require('../assets/images/categories/greetings_and_phrases/Thank you.mp4'),
+    title: 'Thank You',
+    description: 'Sign "Thank You": Place your fingers near your mouth and move your hand away, as if blowing a kiss.',
+  },
+};
 
 export default function GreetingsAndPhrasesScreen() {
-  // Use navigation with the typed navigation prop
-  const nav = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+  const navigation = useNavigation<NavigationProp>();
+  const videoKeys = Object.keys(video_data) as (keyof typeof video_data)[];
 
   return (
     <ThemedView style={styles.FullScreenContainer}>
       <ThemedView style={styles.container}>
         <ThemedView style={styles.gridContainer}>
-          {data.map((item) => (
+          {videoKeys.map((key) => (
             <TouchableOpacity
-              key={item.letter}
+              key={key}
               style={styles.gridItem}
               onPress={() =>
-                nav.navigate('Sign Preview', {
-                  image: item.image, // Pass the image URL directly
-                  title: item.title,
-                  description: item.description, // Pass the description from the JSON file
+                navigation.navigate('Sign Video', {
+                  video: video_data[key].video, // Pass the video URL directly
+                  title: video_data[key].title,
+                  description: video_data[key].description, // Pass the hardcoded description
                 })
               }
             >
-              <ThemedText style={styles.navText}>{item.letter}</ThemedText>
+              <ThemedText style={styles.navText}>{video_data[key].title}</ThemedText>
             </TouchableOpacity>
           ))}
         </ThemedView>
@@ -84,6 +90,7 @@ export default function GreetingsAndPhrasesScreen() {
 
 const styles = StyleSheet.create({
   FullScreenContainer: {
+    flex: 1,
     backgroundColor: '#FFDD67',
   },
   container: {
@@ -101,8 +108,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFDD67',
   },
   gridItem: {
-    width: 60,
-    height: 60,
+    textAlign: "center",
+    padding: 25,
+    width: 130,
+    height: 130,
     justifyContent: 'center',
     alignItems: 'center',
     margin: 10,
@@ -110,7 +119,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   navText: {
-    fontSize: 22,
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: "center",
+    fontSize: 18,
     fontWeight: 'bold',
     color: '#333',
   },

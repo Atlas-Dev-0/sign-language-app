@@ -1,12 +1,14 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
-
 import Categories from '../../screens/categories';
 import Alphabets from '../../screens/alphabetsScreen';
 import Numbers from '../../screens/numbersScreen';
+import Days from '../../screens/daysScreen';
 import GreetingsAndPhrases from '../../screens/greetings_and_phrases';
 import ImageScreens from '../../screens/imageScreens';
+import VideoScreens from '../../screens/videoScreens';
 import { ThemedView } from '@/components/ThemedView';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -26,12 +28,13 @@ export default function HomeScreen() {
         },
       }}
     >
-      {/* Define your screens */}
       <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen name="Alphabets" component={Alphabets} />
       <Stack.Screen name="Numbers" component={Numbers} />
+      <Stack.Screen name="Days" component={Days} />
       <Stack.Screen name="Greetings And Phrases" component={GreetingsAndPhrases} />
       <Stack.Screen name="Sign Preview" component={ImageScreens} />
+      <Stack.Screen name="Sign Video" component={VideoScreens} />
     </Stack.Navigator>
   );
 }

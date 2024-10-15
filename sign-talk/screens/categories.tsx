@@ -18,7 +18,7 @@ export default function Categories() {
           <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Numbers' as never)}>
             <Image source={require('@/assets/images/buttons/NUMBERS_BUTTON.png')} style={styles.gridImage} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.gridItem}>
+          <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Days' as never)}>
             <Image source={require('@/assets/images/buttons/DAYS_BUTTON.png')} style={styles.gridImage} />
           </TouchableOpacity>
           <TouchableOpacity style={styles.gridItem}>
