@@ -81,6 +81,7 @@ export default function AlphabetsScreen() {
   );
 }
 
+
 const styles = StyleSheet.create({
   FullScreenContainer: {
     backgroundColor: '#FFDD67',

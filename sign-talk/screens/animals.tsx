@@ -22,40 +22,25 @@ interface VideoData {
 
 // Map each greeting/phrase to its corresponding video and hardcoded description
 const video_data: Record<string, VideoData> = {
-  Goodmorning: {
-    video: require('../assets/images/categories/greetings_and_phrases/Goodmorning.mp4'),
-    title: 'Good Morning',
-    description: 'Sign "Good Morning": Start with your dominant hand flat, fingers together, and raise it from your chest upwards, as if to mimic the rising sun.',
+  Bird: {
+    video: require('../assets/images/categories/animals/Bird.mp4'),
+    title: 'Bird',
+    description: 'Sign "Bird": Pinch your thumb and index finger together near your mouth and mimic a beak opening and closing.',
   },
-  Goodnight: {
-    video: require('../assets/images/categories/greetings_and_phrases/Goodnight.mp4'),
-    title: 'Good Night',
-    description: 'Sign "Good Night": Form a "C" shape with both hands, and gently lower one hand over the other as if covering something.',
+  Cat: {
+    video: require('../assets/images/categories/animals/Cat.mp4'),
+    title: 'Cat',
+    description: 'Sign "Cat": Use your thumb and index finger to pinch together near the sides of your mouth, mimicking whiskers.',
   },
-  'Happy birthday': {
-    video: require('../assets/images/categories/greetings_and_phrases/Happy birthday.mp4'),
-    title: 'Happy Birthday',
-    description: 'Sign "Happy Birthday": Start by patting your chest with both hands, and then move your dominant hand towards your mouth, mimicking blowing out a candle.',
+  Dog: {
+    video: require('../assets/images/categories/animals/Dog.mp4'),
+    title: 'Dog',
+    description: 'Sign "Dog": Pat your leg with one hand, as if calling a dog, then snap your fingers.',
   },
-  'I_m sorry': {
-    video: require('../assets/images/categories/greetings_and_phrases/I_m sorry.mp4'),
-    title: 'I\'m Sorry',
-    description: 'Sign "I\'m Sorry": Make a fist with your dominant hand and rub it in a circular motion over your chest.',
-  },
-  'Nice to meet you': {
-    video: require('../assets/images/categories/greetings_and_phrases/Nice to meet you.mp4'),
-    title: 'Nice to Meet You',
-    description: 'Sign "Nice to Meet You": Place one hand palm down and slide it forward, then bring both index fingers together, pointing towards the person you are greeting.',
-  },
-  Please: {
-    video: require('../assets/images/categories/greetings_and_phrases/Please.mp4'),
-    title: 'Please',
-    description: 'Sign "Please": Place your dominant hand on your chest and move it in a circular motion.',
-  },
-  'Thank you': {
-    video: require('../assets/images/categories/greetings_and_phrases/Thank you.mp4'),
-    title: 'Thank You',
-    description: 'Sign "Thank You": Place your fingers near your mouth and move your hand away, as if blowing a kiss.',
+  Tiger: {
+    video: require('../assets/images/categories/animals/Tiger.mp4'),
+    title: 'Tiger',
+    description: 'Sign "Tiger": Extend your fingers and bring your hands to your face, then pull them away, mimicking a tiger scratching with claws.',
   },
 };
 
@@ -110,8 +95,8 @@ const styles = StyleSheet.create({
   gridItem: {
     textAlign: "center",
     padding: 25,
-    width: 130,
-    height: 120,
+    width: 140,
+    height: 140,
     justifyContent: 'center',
     alignItems: 'center',
     margin: 10,

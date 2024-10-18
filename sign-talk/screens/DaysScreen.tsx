@@ -103,8 +103,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFDD67',
   },
   gridItem: {
-    width: 100,
-    height: 60,
+    width: 120,
+    height: 120,
     justifyContent: 'center',
     alignItems: 'center',
     margin: 10,

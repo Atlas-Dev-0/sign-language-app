@@ -22,40 +22,30 @@ interface VideoData {
 
 // Map each greeting/phrase to its corresponding video and hardcoded description
 const video_data: Record<string, VideoData> = {
-  Goodmorning: {
-    video: require('../assets/images/categories/greetings_and_phrases/Goodmorning.mp4'),
-    title: 'Good Morning',
-    description: 'Sign "Good Morning": Start with your dominant hand flat, fingers together, and raise it from your chest upwards, as if to mimic the rising sun.',
+  Dancing: {
+    video: require('../assets/images/categories/physical_activities/Dancing.mp4'),
+    title: 'Dancing',
+    description: 'Sign "Dancing": With both hands slightly raised, sway side to side in a rhythmic motion, as if mimicking a dance.',
   },
-  Goodnight: {
-    video: require('../assets/images/categories/greetings_and_phrases/Goodnight.mp4'),
-    title: 'Good Night',
-    description: 'Sign "Good Night": Form a "C" shape with both hands, and gently lower one hand over the other as if covering something.',
+  Jumping: {
+    video: require('../assets/images/categories/physical_activities/Jumping.mp4'),
+    title: 'Jumping',
+    description: 'Sign "Jumping": Hold both hands flat, palms facing down, and move them upwards in a quick motion, as if mimicking a jump.',
   },
-  'Happy birthday': {
-    video: require('../assets/images/categories/greetings_and_phrases/Happy birthday.mp4'),
-    title: 'Happy Birthday',
-    description: 'Sign "Happy Birthday": Start by patting your chest with both hands, and then move your dominant hand towards your mouth, mimicking blowing out a candle.',
+  Playing: {
+    video: require('../assets/images/categories/physical_activities/Playing.mp4'),
+    title: 'Playing',
+    description: 'Sign "Playing": Use both hands to form a "Y" shape (thumbs and pinkies extended), then move them in circles as if enjoying a playful activity.',
   },
-  'I_m sorry': {
-    video: require('../assets/images/categories/greetings_and_phrases/I_m sorry.mp4'),
-    title: 'I\'m Sorry',
-    description: 'Sign "I\'m Sorry": Make a fist with your dominant hand and rub it in a circular motion over your chest.',
+  Running: {
+    video: require('../assets/images/categories/physical_activities/Running.mp4'),
+    title: 'Running',
+    description: 'Sign "Running": Make an "L" shape with your dominant hand and mimic running by moving it quickly in a forward motion.',
   },
-  'Nice to meet you': {
-    video: require('../assets/images/categories/greetings_and_phrases/Nice to meet you.mp4'),
-    title: 'Nice to Meet You',
-    description: 'Sign "Nice to Meet You": Place one hand palm down and slide it forward, then bring both index fingers together, pointing towards the person you are greeting.',
-  },
-  Please: {
-    video: require('../assets/images/categories/greetings_and_phrases/Please.mp4'),
-    title: 'Please',
-    description: 'Sign "Please": Place your dominant hand on your chest and move it in a circular motion.',
-  },
-  'Thank you': {
-    video: require('../assets/images/categories/greetings_and_phrases/Thank you.mp4'),
-    title: 'Thank You',
-    description: 'Sign "Thank You": Place your fingers near your mouth and move your hand away, as if blowing a kiss.',
+  Walking: {
+    video: require('../assets/images/categories/physical_activities/Walking.mp4'),
+    title: 'Walking',
+    description: 'Sign "Walking": Extend both hands and move them alternately in front of you, as if taking steps in place.',
   },
 };
 

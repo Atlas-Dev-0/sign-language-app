@@ -38,20 +38,24 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFDD67',
   },
   card: {
+    marginTop: 20,
     width: '93%',
+    height: 500, // Use minHeight instead of a fixed height
+    minHeight: 200, // Use minHeight instead of a fixed height
     backgroundColor: '#fff',
-    borderRadius: 10,
+    borderRadius: 11,
     borderCurve: 'circular',
-    shadowColor: '#000',
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
-    shadowOffset: { width: 0, height: 2 },
-    elevation: 3,
+    shadowColor: '#001',
+    shadowOpacity: 1.2,
+    shadowRadius: 6,
+    shadowOffset: { width: 1, height: 2 },
+    elevation: 5, // For Android shadow effect
     alignItems: 'center',
     justifyContent: 'flex-start',
     paddingLeft: 10,
     paddingRight: 10,
     paddingTop: 30,
+    paddingBottom: 20, // Add padding to the bottom for better spacing
   },
   image: {
     marginTop: 0,

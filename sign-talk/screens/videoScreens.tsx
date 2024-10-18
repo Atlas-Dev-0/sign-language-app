@@ -1,10 +1,10 @@
-import React from 'react';
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { StyleSheet } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { RouteProp, useRoute } from '@react-navigation/native';
-import { Video, ResizeMode } from 'expo-av';
+import { Video, ResizeMode, AVPlaybackStatus } from 'expo-av';
+import * as ScreenOrientation from 'expo-screen-orientation';
 
 // Define the type for the route params
 type RootStackParamList = {
@@ -17,7 +17,24 @@ type SignPreviewRouteProp = RouteProp<RootStackParamList, 'Sign Video'>;
 export default function VideoScreen() {
   const route = useRoute<SignPreviewRouteProp>();
   const { video, title, description } = route.params; // Retrieve the video, title, and description from route params
-  const [status, setStatus] = useState({});
+  const [status, setStatus] = useState<AVPlaybackStatus | undefined>(undefined); // Use AVPlaybackStatus type
+
+
+  const onFullscreenUpdate = async ({ fullscreenUpdate }: { fullscreenUpdate: number }) => {
+    switch (fullscreenUpdate) {
+      case 0: // Video.FULLSCREEN_UPDATE_PLAYER_DID_PRESENT
+      case 1:
+        await ScreenOrientation.unlockAsync(); // only on Android required
+        break;
+      case 2: // Video.FULLSCREEN_UPDATE_PLAYER_DID_DISMISS
+      case 3:
+        await ScreenOrientation.lockAsync(
+          ScreenOrientation.OrientationLock.PORTRAIT
+        ); // only on Android required
+        break;
+    }
+  };
+
   return (
     <ThemedView style={styles.container}>
       <ThemedView style={styles.card}>
@@ -27,7 +44,8 @@ export default function VideoScreen() {
           resizeMode={ResizeMode.COVER}
           useNativeControls // Enable native controls
           isLooping
-          onPlaybackStatusUpdate={status => setStatus(() => status)}
+          onPlaybackStatusUpdate={(status) => setStatus(() => status)}
+          onFullscreenUpdate={onFullscreenUpdate}
         />
         <ThemedView style={styles.textContainer}>
           <ThemedText style={styles.title}>{title}</ThemedText>
@@ -42,16 +60,15 @@ export default function VideoScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1, // Make sure the container fills the screen
-    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFDD68',
   },
   card: {
-    height: "90%",
+    marginTop: 20,
     width: "94%",
+    minHeight: 200, // Use minHeight instead of a fixed height
     backgroundColor: '#fff',
     borderRadius: 11,
-    borderCurve: 'circular',
     shadowColor: '#001',
     shadowOpacity: 1.2,
     shadowRadius: 6,
@@ -62,6 +79,7 @@ const styles = StyleSheet.create({
     paddingLeft: 11,
     paddingRight: 11,
     paddingTop: 20,
+    paddingBottom: 20, // Add padding at the bottom for better spacing
   },
   video: {
     width: "100%", // Set width to fill the card
@@ -71,10 +89,12 @@ const styles = StyleSheet.create({
     marginTop: 1,
     width: '101%',
     alignItems: 'center',
+    textAlign: 'center',
     backgroundColor: '#fff',
   },
   title: {
     alignItems: 'center',
+    textAlign: 'center',
     alignSelf: 'center',
     fontSize: 41,
     fontWeight: 'bold',
@@ -82,6 +102,7 @@ const styles = StyleSheet.create({
     marginBottom: 11,
     marginTop: 31,
     paddingTop: 16,
+    lineHeight: 50, // Adjust line height as needed
   },
   subtitle: {
     marginTop: 31,

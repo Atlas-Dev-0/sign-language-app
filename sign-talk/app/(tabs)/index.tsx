@@ -1,7 +1,6 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
 import { ThemedView } from '@/components/ThemedView';
-
 import Categories from '../../screens/categories';
 import Alphabets from '../../screens/alphabetsScreen';
 import Numbers from '../../screens/numbersScreen';
