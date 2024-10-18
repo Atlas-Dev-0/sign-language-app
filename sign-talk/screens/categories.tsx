@@ -27,7 +27,7 @@ export default function Categories() {
           <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Physical Activities' as never)}>
             <Image source={require('@/assets/images/buttons/PHYSICAL_BUTTON.png')} style={styles.gridImage} />
           </TouchableOpacity>
-          <TouchableOpacity style={styles.gridItem}>
+          <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Quiz' as never)}>
             <Image source={require('@/assets/images/buttons/QUIZ_BUTTON.png')} style={styles.gridImage} />
           </TouchableOpacity>
         </ThemedView>

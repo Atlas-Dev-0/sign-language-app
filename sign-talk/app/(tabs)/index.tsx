@@ -7,6 +7,7 @@ import Numbers from '../../screens/numbersScreen';
 import Days from '../../screens/daysScreen';
 import GreetingsAndPhrases from '../../screens/greetings_and_phrases';
 import Animals from '../../screens/animals';
+import Quiz from '../../screens/quiz';
 import PhysicalActivities from '../../screens/physicalActivities';
 import ImageScreens from '../../screens/imageScreens';
 import VideoScreens from '../../screens/videoScreens';
@@ -38,6 +39,7 @@ export default function HomeScreen() {
       <Stack.Screen name="Animals" component={Animals} />
       <Stack.Screen name="Sign Preview" component={ImageScreens} />
       <Stack.Screen name="Sign Video" component={VideoScreens} />
+      <Stack.Screen name="Quiz" component={Quiz} />
     </Stack.Navigator>
   );
 }
