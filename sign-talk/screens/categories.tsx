@@ -21,6 +21,12 @@ export default function Categories() {
           <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Days' as never)}>
             <Image source={require('@/assets/images/buttons/DAYS_BUTTON.png')} style={styles.gridImage} />
           </TouchableOpacity>
+          <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Animals' as never)}>
+            <Image source={require('@/assets/images/buttons/ANIMALS_BUTTON.png')} style={styles.gridImage} />
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.gridItem} onPress={() => nav.navigate('Physical Activities' as never)}>
+            <Image source={require('@/assets/images/buttons/PHYSICAL_BUTTON.png')} style={styles.gridImage} />
+          </TouchableOpacity>
           <TouchableOpacity style={styles.gridItem}>
             <Image source={require('@/assets/images/buttons/QUIZ_BUTTON.png')} style={styles.gridImage} />
           </TouchableOpacity>

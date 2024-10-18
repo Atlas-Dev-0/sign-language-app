@@ -59,7 +59,7 @@ const video_data: Record<string, VideoData> = {
   },
 };
 
-export default function GreetingsAndPhrasesScreen() {
+export default function PhysicalActivities() {
   const navigation = useNavigation<NavigationProp>();
   const videoKeys = Object.keys(video_data) as (keyof typeof video_data)[];
 
