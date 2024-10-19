@@ -25,7 +25,7 @@ const video_data: Record<string, VideoData> = {
   Goodmorning: {
     video: require('../assets/images/categories/greetings_and_phrases/Goodmorning.mp4'),
     title: 'Good Morning',
-    description: 'Sign "Good Morning": Start with your dominant hand flat, fingers together, and raise it from your chest upwards, as if to mimic the rising sun.',
+    description: 'Start with your dominant hand flat, fingers together, and raise it from your chest upwards, as if to mimic the rising sun.',
   },
   Goodnight: {
     video: require('../assets/images/categories/greetings_and_phrases/Goodnight.mp4'),
