@@ -29,15 +29,16 @@
     },
     "plugins": [
       "expo-router",
-      "expo-font",
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true
     },
     "extra": {
       "eas": {
-        "projectId": "63301502-fe34-4801-a411-f433ad034ff3"
+        "projectId": "888a389d-609e-426f-bb3c-3fd308765383"
       }
-    }
+    },
+    "owner": "mrg2400"
   }
 }
