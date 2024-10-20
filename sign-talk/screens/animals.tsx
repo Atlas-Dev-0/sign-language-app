@@ -25,22 +25,22 @@ const video_data: Record<string, VideoData> = {
   Bird: {
     video: require('../assets/images/categories/animals/Bird.mp4'),
     title: 'Bird',
-    description: 'Sign "Bird": Pinch your thumb and index finger together near your mouth and mimic a beak opening and closing.',
+    description: 'Pinch your thumb and index finger together near your mouth and mimic a beak opening and closing.',
   },
   Cat: {
     video: require('../assets/images/categories/animals/Cat.mp4'),
     title: 'Cat',
-    description: 'Sign "Cat": Use your thumb and index finger to pinch together near the sides of your mouth, mimicking whiskers.',
+    description: 'Use your thumb and index finger to pinch together near the sides of your mouth, mimicking whiskers.',
   },
   Dog: {
     video: require('../assets/images/categories/animals/Dog.mp4'),
     title: 'Dog',
-    description: 'Sign "Dog": Pat your leg with one hand, as if calling a dog, then snap your fingers.',
+    description: 'Pat your leg with one hand, as if calling a dog, then snap your fingers.',
   },
   Tiger: {
     video: require('../assets/images/categories/animals/Tiger.mp4'),
     title: 'Tiger',
-    description: 'Sign "Tiger": Extend your fingers and bring your hands to your face, then pull them away, mimicking a tiger scratching with claws.',
+    description: 'Extend your fingers and bring your hands to your face, then pull them away, mimicking a tiger scratching with claws.',
   },
 };
 

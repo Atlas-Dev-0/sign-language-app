@@ -30,12 +30,12 @@ const video_data: Record<string, VideoData> = {
   Goodnight: {
     video: require('../assets/images/categories/greetings_and_phrases/Goodnight.mp4'),
     title: 'Good Night',
-    description: 'Sign "Good Night": Form a "C" shape with both hands, and gently lower one hand over the other as if covering something.',
+    description: 'Form a "C" shape with both hands, and gently lower one hand over the other as if covering something.',
   },
   'Happy birthday': {
     video: require('../assets/images/categories/greetings_and_phrases/Happy birthday.mp4'),
     title: 'Happy Birthday',
-    description: 'Sign "Happy Birthday": Start by patting your chest with both hands, and then move your dominant hand towards your mouth, mimicking blowing out a candle.',
+    description: 'Start by patting your chest with both hands, and then move your dominant hand towards your mouth, mimicking blowing out a candle.',
   },
   'I_m sorry': {
     video: require('../assets/images/categories/greetings_and_phrases/I_m sorry.mp4'),
@@ -45,17 +45,17 @@ const video_data: Record<string, VideoData> = {
   'Nice to meet you': {
     video: require('../assets/images/categories/greetings_and_phrases/Nice to meet you.mp4'),
     title: 'Nice to Meet You',
-    description: 'Sign "Nice to Meet You": Place one hand palm down and slide it forward, then bring both index fingers together, pointing towards the person you are greeting.',
+    description: ' Place one hand palm down and slide it forward, then bring both index fingers together, pointing towards the person you are greeting.',
   },
   Please: {
     video: require('../assets/images/categories/greetings_and_phrases/Please.mp4'),
     title: 'Please',
-    description: 'Sign "Please": Place your dominant hand on your chest and move it in a circular motion.',
+    description: 'Place your dominant hand on your chest and move it in a circular motion.',
   },
   'Thank you': {
     video: require('../assets/images/categories/greetings_and_phrases/Thank you.mp4'),
     title: 'Thank You',
-    description: 'Sign "Thank You": Place your fingers near your mouth and move your hand away, as if blowing a kiss.',
+    description: 'Place your fingers near your mouth and move your hand away, as if blowing a kiss.',
   },
 };
 

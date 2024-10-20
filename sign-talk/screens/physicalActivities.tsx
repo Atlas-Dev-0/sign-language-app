@@ -25,27 +25,27 @@ const video_data: Record<string, VideoData> = {
   Dancing: {
     video: require('../assets/images/categories/physical_activities/Dancing.mp4'),
     title: 'Dancing',
-    description: 'Sign "Dancing": With both hands slightly raised, sway side to side in a rhythmic motion, as if mimicking a dance.',
+    description: 'With both hands slightly raised, sway side to side in a rhythmic motion, as if mimicking a dance.',
   },
   Jumping: {
     video: require('../assets/images/categories/physical_activities/Jumping.mp4'),
     title: 'Jumping',
-    description: 'Sign "Jumping": Hold both hands flat, palms facing down, and move them upwards in a quick motion, as if mimicking a jump.',
+    description: 'Hold both hands flat, palms facing down, and move them upwards in a quick motion, as if mimicking a jump.',
   },
   Playing: {
     video: require('../assets/images/categories/physical_activities/Playing.mp4'),
     title: 'Playing',
-    description: 'Sign "Playing": Use both hands to form a "Y" shape (thumbs and pinkies extended), then move them in circles as if enjoying a playful activity.',
+    description: 'Use both hands to form a "Y" shape (thumbs and pinkies extended), then move them in circles as if enjoying a playful activity.',
   },
   Running: {
     video: require('../assets/images/categories/physical_activities/Running.mp4'),
     title: 'Running',
-    description: 'Sign "Running": Make an "L" shape with your dominant hand and mimic running by moving it quickly in a forward motion.',
+    description: 'Make an "L" shape with your dominant hand and mimic running by moving it quickly in a forward motion.',
   },
   Walking: {
     video: require('../assets/images/categories/physical_activities/Walking.mp4'),
     title: 'Walking',
-    description: 'Sign "Walking": Extend both hands and move them alternately in front of you, as if taking steps in place.',
+    description: 'Extend both hands and move them alternately in front of you, as if taking steps in place.',
   },
 };
 

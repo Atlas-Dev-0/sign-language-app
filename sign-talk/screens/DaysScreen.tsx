@@ -25,37 +25,37 @@ const videos: Record<string, VideoData> = {
   Monday: {
     video: require('../assets/images/categories/day/Monday.mp4'),
     title: 'Monday Sign',
-    description: 'Sign for Monday: Hold up your dominant hand, palm facing forward, and make an “M” shape using your three fingers.'
+    description: 'Hold up your dominant hand, palm facing forward, and make an “M” shape using your three fingers.'
   },
   Tuesday: {
     video: require('../assets/images/categories/day/Tuesday.mp4'),
     title: 'Tuesday Sign',
-    description: 'Sign for Tuesday: Make a “T” shape with your hand by tucking your thumb under your index finger and rotating your wrist.'
+    description: 'Make a “T” shape with your hand by tucking your thumb under your index finger and rotating your wrist.'
   },
   Wednesday: {
     video: require('../assets/images/categories/day/Wednesday.mp4'),
     title: 'Wednesday Sign',
-    description: 'Sign for Wednesday: Form a “W” with three fingers extended and move your hand in small circles.'
+    description: 'Form a “W” with three fingers extended and move your hand in small circles.'
   },
   Thursday: {
     video: require('../assets/images/categories/day/Thursday.mp4'),
     title: 'Thursday Sign',
-    description: 'Sign for Thursday: Use your dominant hand to form a “T” and move it in a small circular motion.'
+    description: 'Use your dominant hand to form a “T” and move it in a small circular motion.'
   },
   Friday: {
     video: require('../assets/images/categories/day/Friday.mp4'),
     title: 'Friday Sign',
-    description: 'Sign for Friday: Form an “F” shape by touching your thumb and index finger together, and rotate your wrist in small circles.'
+    description: 'Form an “F” shape by touching your thumb and index finger together, and rotate your wrist in small circles.'
   },
   Saturday: {
     video: require('../assets/images/categories/day/Saturday.mp4'),
     title: 'Saturday Sign',
-    description: 'Sign for Saturday: Form an “S” by making a fist, then move your fist in a circular motion.'
+    description: 'Form an “S” by making a fist, then move your fist in a circular motion.'
   },
   Sunday: {
     video: require('../assets/images/categories/day/Sunday.mp4'),
     title: 'Sunday Sign',
-    description: 'Sign for Sunday: Hold both hands out in front of you, palms facing out, and make small upward movements.'
+    description: 'Hold both hands out in front of you, palms facing out, and make small upward movements.'
   },
 };
 
