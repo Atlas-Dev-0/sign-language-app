@@ -9,8 +9,8 @@
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#FFDD67"
+      "resizeMode": "cover",
+      "backgroundColor": "#ffdd67"
     },
     "ios": {
       "supportsTablet": true
@@ -18,9 +18,14 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#ffdd67"
       },
-      "package": "com.mrg2400.signtalk"
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "backgroundColor": "#ffdd67"
+      "resizeMode": "cover"
+      },
+      "package": "com.signtalk"
     },
     "web": {
       "bundler": "metro",
