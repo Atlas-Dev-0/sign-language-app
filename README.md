@@ -11,7 +11,7 @@ Android SDK (optional, only if you are going to build on your local machine)
 Git CLI
 
 ```
---
+---
 
 Development Environment Setup and Installation
 
@@ -29,4 +29,4 @@ Development Environment Setup and Installation
 - npx expo run
 
 ```
---
+---
