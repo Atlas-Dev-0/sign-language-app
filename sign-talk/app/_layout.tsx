@@ -28,7 +28,20 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
+      <Stack
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#FFDD67', // Set the header background to yellow
+          },
+          headerTintColor: '#333', // Set the color of back button and title text
+          headerTitleStyle: {
+            fontWeight: 'bold', // Customize the title text style
+          },
+          contentStyle: {
+            backgroundColor: '#FFDD67', // Default background for every screen
+          },
+        }}
+      >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="+not-found" />
       </Stack>
