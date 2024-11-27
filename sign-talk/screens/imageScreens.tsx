@@ -20,7 +20,7 @@ export default function ImageScreens() {
   return (
     <View style={styles.container}>
       <LinearGradient
-        style={styles.bgcontainer}
+        style={styles.container}
         colors={["#ff0070", "#6fb7ff"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
@@ -38,16 +38,11 @@ export default function ImageScreens() {
 }
 
 const styles = StyleSheet.create({
-  bgcontainer: {
-    flex: 1,
+  container: {
     alignItems: 'center',
     justifyContent: 'flex-start',
     height: "100%",
-  },
-  container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: "100%",
+    width: "100%",
   },
   card: {
     marginTop: 20,

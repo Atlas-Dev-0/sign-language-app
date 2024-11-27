@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { ScrollView, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useNavigation } from '@react-navigation/native';
@@ -57,12 +57,12 @@ export default function PhysicalActivities() {
   return (
     <View style={styles.container}>
       <LinearGradient
-        style={styles.bgcontainer}
+        style={styles.container}
         colors={["#ff0070", "#6fb7ff"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
       >
-        <View style={styles.gridContainer}>
+        <ScrollView contentContainerStyle={styles.gridContainer}>
           {videoKeys.map((key) => (
             <TouchableOpacity
               key={key}
@@ -78,20 +78,15 @@ export default function PhysicalActivities() {
               <ThemedText style={styles.navText}>{video_data[key].title}</ThemedText>
             </TouchableOpacity>
           ))}
-        </View>
+        </ScrollView>
       </LinearGradient>
     </View >
   );
 }
 const styles = StyleSheet.create({
-  bgcontainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: "100%",
-  },
   container: {
-    flex: 1,
+    height: "100%",
+    width: "100%",
     justifyContent: 'center',
     alignItems: 'center',
   },

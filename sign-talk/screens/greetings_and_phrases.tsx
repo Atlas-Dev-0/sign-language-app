@@ -124,9 +124,9 @@ export default function GreetingsAndPhrasesScreen() {
   const navigation = useNavigation<NavigationProp>();
   const videoKeys = Object.keys(video_data) as (keyof typeof video_data)[];
   return (
-    <View style={styles.container}>
+    <View styles={styles.container}>
       <LinearGradient
-        style={styles.bgcontainer}
+        style={styles.container}
         colors={["#ff0070", "#6fb7ff"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
@@ -149,30 +149,24 @@ export default function GreetingsAndPhrasesScreen() {
           ))}
         </ScrollView>
       </LinearGradient >
-    </View >
+    </View>
   );
 }
 const styles = StyleSheet.create({
-  bgcontainer: {
-    flex: 1,
-    alignItems: 'center',
+  container: {
+    width: "100%",
     justifyContent: 'center',
+    alignItems: 'center',
     height: "100%",
   },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   gridContainer: {
-    marginLeft: 10,
     marginBottom: 30,
     marginTop: 10,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '95%',
+    width: '100%',
   },
   gridItem: {
     padding: 20,
@@ -182,7 +176,7 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 5,
     textAlign: 'center',
-    width: 150,
+    width: 160,
     height: 150,
     justifyContent: 'center',
     alignItems: 'center',

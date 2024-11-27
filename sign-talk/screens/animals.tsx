@@ -131,9 +131,8 @@ export default function Animals() {
 
   return (
     <View style={styles.container}>
-
       <LinearGradient
-        style={styles.bgcontainer}
+        style={styles.container}
         colors={["#ff0070", "#6fb7ff"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
@@ -161,26 +160,18 @@ export default function Animals() {
 }
 
 const styles = StyleSheet.create({
-  bgcontainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: "100%",
-  },
   container: {
-    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    height: "100%",
+    width: "100%",
   },
   gridContainer: {
-    marginLeft: 20,
-    marginTop: 10,
-    marginBottom: 30,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '90%',
+    width: '100%',
   },
   gridItem: {
     shadowColor: 'rgba(0, 0, 0, 0.24)',
@@ -189,8 +180,8 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 5,
     textAlign: 'center',
-    width: 100,
-    height: 100,
+    width: 150,
+    height: 150,
     justifyContent: 'center',
     alignItems: 'center',
     margin: 10,
@@ -198,8 +189,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   navText: {
+    padding: 10,
     textAlign: 'center',
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#333',
   },

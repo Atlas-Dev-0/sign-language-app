@@ -65,10 +65,10 @@ export default function VideoScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
     height: "100%",
+    width: "100%",
   },
   card: {
     marginTop: 20,

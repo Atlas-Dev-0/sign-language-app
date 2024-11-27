@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { ScrollView, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useNavigation } from '@react-navigation/native';
@@ -54,12 +54,12 @@ export default function NumbersScreen() {
   return (
     <View style={styles.container}>
       <LinearGradient
-        style={styles.bgcontainer}
+        style={styles.container}
         colors={["#ff0070", "#6fb7ff"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
       >
-        <View style={styles.gridContainer}>
+        <ScrollView contentContainerStyle={styles.gridContainer}>
           {data.map((item) => (
             <TouchableOpacity
               key={item.number} // Use number as the key
@@ -75,21 +75,16 @@ export default function NumbersScreen() {
               <ThemedText style={styles.navText}>{item.number}</ThemedText>
             </TouchableOpacity>
           ))}
-        </View>
+        </ScrollView>
       </LinearGradient>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  bgcontainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: "100%",
-  },
   container: {
-    flex: 1,
+    height: "100%",
+    width: "100%",
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -98,7 +93,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '90%',
+    width: '100%',
   },
   gridItem: {
     shadowColor: 'rgba(0, 0, 0, 0.24)',
@@ -107,8 +102,8 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 5,
     textAlign: 'center',
-    width: 120,
-    height: 120,
+    width: 160,
+    height: 150,
     justifyContent: 'center',
     alignItems: 'center',
     margin: 10,
@@ -116,8 +111,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   navText: {
+    padding: 10,
     textAlign: 'center',
-    fontSize: 22,
+    fontSize: 30,
     fontWeight: 'bold',
     color: '#333',
   },

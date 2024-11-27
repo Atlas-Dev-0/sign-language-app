@@ -22,13 +22,13 @@ export default function HomeScreen() {
     <Stack.Navigator
       screenOptions={({ navigation, route }) => ({
         header: ({ options }) => (
+
           <View style={styles.header}>
             {/* Back Button */}
             <TouchableOpacity activeOpacity={1} onPress={() => navigation.goBack()} style={styles.backButton}>
               <Text style={styles.backIcon}>▶</Text>
               <Text style={styles.backText}>Categories</Text>
             </TouchableOpacity>
-
             {/* Current Screen Name */}
             {route.name !== 'Categories' && (
               <View style={styles.currentScreenContainer}>
@@ -63,11 +63,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     width: '100%',
-    paddingTop: 5,
+    paddingTop: 25,
     paddingHorizontal: 10,
     backgroundColor: "#ff0070",
   },
   backButton: {
+    shadowColor: '#001',
+    shadowOpacity: 1.2,
+    shadowRadius: 6,
+    shadowOffset: { width: 1, height: 2 },
+    elevation: 5,
     zIndex: 3, // Ensures it is above the currentScreenContainer
     backgroundColor: "#ffff",
     color: "black",
@@ -96,15 +101,17 @@ const styles = StyleSheet.create({
   },
   currentScreenContainer: {
     zIndex: 2,
+    flex: 1,
     backgroundColor: '#FFDD67',
     borderTopRightRadius: 20,
     borderBottomRightRadius: 20,
     paddingVertical: 6,
-    paddingHorizontal: 15,
+    paddingHorizontal: 30,
     top: 0, // Adjust as necessary for placement
-    left: -10, // Adjust as necessary for placement
+    left: -20, // Adjust as necessary for placement
   },
   currentScreenText: {
+    fontSize: 15,
     textAlign: 'left',
     color: '#000',
     fontWeight: 'bold',

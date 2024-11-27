@@ -102,7 +102,7 @@ export default function Colors() {
   return (
     <View style={styles.container}>
       <LinearGradient
-        style={styles.bgcontainer}
+        style={styles.container}
         colors={['#ff0070', '#6fb7ff']}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
@@ -113,6 +113,9 @@ export default function Colors() {
             let backgroundColor = key.toLowerCase();
             let textColor = '#FFF'; // Default text color for most colors
 
+            if (key === 'Yellow' || key === 'Gold') {
+              textColor = '#000'; // Set text color to black for White
+            }
             if (key === 'Light' || key === 'Dark') {
               backgroundColor = key === 'Light' ? '#E0E0E0' : '#333333';
               textColor = '#FFF'; // Ensure white text for light/dark items
@@ -121,6 +124,7 @@ export default function Colors() {
             if (key === 'White') {
               textColor = '#000'; // Set text color to black for White
             }
+
 
             if (key === 'Pink') {
               backgroundColor = '#FF69B4'; // More vibrant pink for Pink
@@ -151,25 +155,19 @@ export default function Colors() {
 }
 
 const styles = StyleSheet.create({
-  bgcontainer: {
-    flex: 1,
+  container: {
     alignItems: 'center',
     justifyContent: 'center',
     height: '100%',
     width: '100%',
   },
-  container: {
-    flex: 1,
-  },
   gridContainer: {
-    marginLeft: 15,
-    marginTop: 10,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
     paddingBottom: 20, // Add padding for scrolling
-    width: '95%',
+    width: '100%',
   },
   gridItem: {
     shadowColor: 'rgba(0, 0, 0, 0.24)',
@@ -178,7 +176,7 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 5,
     textAlign: 'center',
-    width: 150,
+    width: 160,
     height: 150,
     justifyContent: 'center',
     alignItems: 'center',

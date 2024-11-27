@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { ScrollView, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useNavigation } from '@react-navigation/native';
@@ -58,14 +58,14 @@ export default function AlphabetsScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
-    <View style={styles.container}>
+    <View styles={styles.container}>
       <LinearGradient
-        style={styles.bgcontainer}
+        style={styles.container}
         colors={["#ff0070", "#6fb7ff"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
       >
-        <View style={styles.gridContainer}>
+        <ScrollView contentContainerStyle={styles.gridContainer}>
           {data.map((item) => (
             <TouchableOpacity
               key={item.letter}
@@ -81,24 +81,18 @@ export default function AlphabetsScreen() {
               <ThemedText style={styles.navText}>{item.letter}</ThemedText>
             </TouchableOpacity>
           ))}
-        </View>
+        </ScrollView>
       </LinearGradient >
-    </View >
+    </View>
   );
 }
 
 
 const styles = StyleSheet.create({
-  bgcontainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: "100%",
-  },
   container: {
-    flex: 1,
-    justifyContent: 'center',
+    width: "100%",
     alignItems: 'center',
+    justifyContent: 'flex-start',
   },
   gridContainer: {
     flexDirection: 'row',
@@ -106,7 +100,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '95%',
-    height: '95%',
   },
   gridItem: {
     shadowColor: 'rgba(0, 0, 0, 0.24)',
@@ -114,8 +107,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.24,
     shadowRadius: 8,
     elevation: 5,
-    width: 70,
-    height: 70,
+    width: 150,
+    height: 150,
     justifyContent: 'center',
     alignItems: 'center',
     margin: 10,
@@ -123,7 +116,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   navText: {
-    fontSize: 22,
+    padding: 10,
+    fontSize: 30,
     fontWeight: 'bold',
     color: '#333',
   },
