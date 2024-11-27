@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Image } from 'react-native';
+import { View, ScrollView, StyleSheet, Image } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { RouteProp, useRoute } from '@react-navigation/native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 // Define the type for the route params
 type RootStackParamList = {
@@ -17,25 +18,36 @@ export default function ImageScreens() {
   const { image, title, description } = route.params; // Retrieve the image, title, and description from route params
 
   return (
-    <ThemedView style={styles.container}>
-      <ThemedView style={styles.card}>
-        <Image source={image} style={styles.image} />
-        <ThemedView style={styles.textContainer}>
-          <ThemedText style={styles.title}>{title}</ThemedText>
-          <ThemedText style={styles.subtitle}>Instructions:</ThemedText>
-          <ThemedText style={styles.description}>{description}</ThemedText>
-        </ThemedView>
-      </ThemedView>
-    </ThemedView >
+    <View style={styles.container}>
+      <LinearGradient
+        style={styles.bgcontainer}
+        colors={["#ff0070", "#6fb7ff"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 1 }}
+      >
+        <View style={styles.card}>
+          <Image source={image} style={styles.image} />
+          <View style={styles.textContainer}>
+            <ThemedText style={styles.title}>{title}</ThemedText>
+            <ThemedText style={styles.subtitle}>{description}</ThemedText>
+          </View>
+        </View>
+      </LinearGradient>
+    </View >
   );
 }
 
 const styles = StyleSheet.create({
+  bgcontainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    height: "100%",
+  },
   container: {
-    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFDD67',
+    height: "100%",
   },
   card: {
     marginTop: 20,
@@ -58,6 +70,9 @@ const styles = StyleSheet.create({
     paddingBottom: 20, // Add padding to the bottom for better spacing
   },
   image: {
+    borderWidth: 4,
+    borderRadius: 20,
+    borderColor: 'white',
     marginTop: 0,
     width: '100%',
     height: '50%',
@@ -79,15 +94,11 @@ const styles = StyleSheet.create({
     paddingTop: 15, // Add padding to ensure it doesn’t touch the top
   },
   subtitle: {
+    textAlign: 'center',
     marginTop: 30,
     marginBottom: 20,
     fontSize: 20,
     fontWeight: 'bold',
     color: '#000',
-  },
-  description: {
-    fontSize: 16,
-    color: '#333',
-    textAlign: 'center',
   },
 });

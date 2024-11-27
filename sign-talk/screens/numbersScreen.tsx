@@ -1,10 +1,11 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import signDescriptions from '../assets/dataset/categories/numbers/number-data.json';
+import { LinearGradient } from 'expo-linear-gradient';
 
 // Define the type for the navigation stack
 type RootStackParamList = {
@@ -51,9 +52,14 @@ export default function NumbersScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
-    <ThemedView style={styles.FullScreenContainer}>
-      <ThemedView style={styles.container}>
-        <ThemedView style={styles.gridContainer}>
+    <View style={styles.container}>
+      <LinearGradient
+        style={styles.bgcontainer}
+        colors={["#ff0070", "#6fb7ff"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 1 }}
+      >
+        <View style={styles.gridContainer}>
           {data.map((item) => (
             <TouchableOpacity
               key={item.number} // Use number as the key
@@ -69,77 +75,50 @@ export default function NumbersScreen() {
               <ThemedText style={styles.navText}>{item.number}</ThemedText>
             </TouchableOpacity>
           ))}
-        </ThemedView>
-      </ThemedView>
-    </ThemedView>
+        </View>
+      </LinearGradient>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  navBar: {
-    flexDirection: 'row',
+  bgcontainer: {
+    flex: 1,
     alignItems: 'center',
-    marginTop: 55,
-    marginBottom: 5,
-    backgroundColor: '#FFDD67', // Adjust to match your design
+    justifyContent: 'center',
+    height: "100%",
   },
   container: {
-    marginTop: 2,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFDD67', // Yellow background like the body
-  },
-  FullScreenContainer: {
-    backgroundColor: '#FFDD67', // Yellow background to match body-like color
-  },
-  backButton: {
-    marginRight: 10,
-    marginLeft: 10,
-  },
-  backButtonText: {
-    fontSize: 22,
-    color: '#333', // Adjust for contrast
-  },
-  navText: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: '#333', // Adjust for contrast
-  },
-  logo: {
-    width: 290,
-    height: 290,
-    resizeMode: 'contain',
-  },
-  titleText: {
-    fontSize: 32,
-    fontWeight: 'bold',
-    color: '#333', // Dark text color
-    marginTop: 20,
   },
   gridContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '100%', // Adjust the width of the grid container as needed
-    backgroundColor: '#FFDD67', // Yellow background to match body-like color
+    width: '90%',
   },
   gridItem: {
-    width: 100, // Increase the size of each grid item for larger boxes
-    height: 100, // Increase the size of each grid item for larger boxes
+    shadowColor: 'rgba(0, 0, 0, 0.24)',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.24,
+    shadowRadius: 8,
+    elevation: 5,
+    textAlign: 'center',
+    width: 120,
+    height: 120,
     justifyContent: 'center',
-    backgroundColor: '#FFFFFF',
     alignItems: 'center',
-    margin: 15, // Spacing between the squares
-    borderRadius: 10, // Optional for rounded corners
+    margin: 10,
+    borderRadius: 10,
+    backgroundColor: '#FFFFFF',
   },
-  gridText: {
-    fontSize: 18,
-    color: '#333', // Adjust text color for contrast
-  },
-  gridImage: {
-    width: '100%',
-    height: '100%',
-    resizeMode: 'contain', // Adjust the image to fit inside the grid item
+  navText: {
+    textAlign: 'center',
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#333',
   },
 });

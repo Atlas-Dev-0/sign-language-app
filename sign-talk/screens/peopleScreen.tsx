@@ -23,39 +23,60 @@ interface VideoData {
 
 // Map each greeting/phrase to its corresponding video and hardcoded description
 const video_data: Record<string, VideoData> = {
-  Dancing: {
-    video: require('../assets/images/categories/physical_activities/Dancing.mp4'),
-    title: 'Dancing',
-    description: 'With both hands slightly raised, sway side to side in a rhythmic motion, as if mimicking a dance.',
+  Aunt: {
+    video: require('../assets/images/categories/people/Aunt.mp4'),
+    title: 'Aunt',
+    description: 'Tap your cheek with your thumb, mimicking the motion of a kiss.',
   },
-  Jumping: {
-    video: require('../assets/images/categories/physical_activities/Jumping.mp4'),
-    title: 'Jumping',
-    description: 'Hold both hands flat, palms facing down, and move them upwards in a quick motion, as if mimicking a jump.',
+  Baby: {
+    video: require('../assets/images/categories/people/Baby.mp4'),
+    title: 'Baby',
+    description: 'Cradle your arms together as if holding a baby.',
   },
-  Playing: {
-    video: require('../assets/images/categories/physical_activities/Playing.mp4'),
-    title: 'Playing',
-    description: 'Use both hands to form a "Y" shape (thumbs and pinkies extended), then move them in circles as if enjoying a playful activity.',
+  Brother: {
+    video: require('../assets/images/categories/people/Brother.mp4'),
+    title: 'Brother',
+    description: 'Touch your forehead with your thumb, then bring your hands together like a handshake.',
   },
-  Running: {
-    video: require('../assets/images/categories/physical_activities/Running.mp4'),
-    title: 'Running',
-    description: 'Make an "L" shape with your dominant hand and mimic running by moving it quickly in a forward motion.',
+  Father: {
+    video: require('../assets/images/categories/people/Father.mp4'),
+    title: 'Father',
+    description: 'Tap your forehead with your thumb, representing respect and authority.',
   },
-  Walking: {
-    video: require('../assets/images/categories/physical_activities/Walking.mp4'),
-    title: 'Walking',
-    description: 'Extend both hands and move them alternately in front of you, as if taking steps in place.',
+  Grandfather: {
+    video: require('../assets/images/categories/people/Grandfather.mp4'),
+    title: 'Grandfather',
+    description: 'Touch your forehead with your thumb, then make a forward circular motion.',
+  },
+  Grandmother: {
+    video: require('../assets/images/categories/people/Grandmother.mp4'),
+    title: 'Grandmother',
+    description: 'Touch your chin with your thumb, then make a forward circular motion.',
+  },
+  Mother: {
+    video: require('../assets/images/categories/people/Mother.mp4'),
+    title: 'Mother',
+    description: 'Tap your chin with your thumb, representing affection and care.',
+  },
+  Sister: {
+    video: require('../assets/images/categories/people/Sister.mp4'),
+    title: 'Sister',
+    description: 'Touch your chin with your thumb, then bring your hands together like a handshake.',
+  },
+  Uncle: {
+    video: require('../assets/images/categories/people/Uncle.mp4'),
+    title: 'Uncle',
+    description: 'Tap your cheek with your index finger, mimicking a cheerful gesture.',
   },
 };
 
-export default function PhysicalActivities() {
+export default function Animals() {
   const navigation = useNavigation<NavigationProp>();
   const videoKeys = Object.keys(video_data) as (keyof typeof video_data)[];
 
   return (
     <View style={styles.container}>
+
       <LinearGradient
         style={styles.bgcontainer}
         colors={["#ff0070", "#6fb7ff"]}
@@ -80,28 +101,29 @@ export default function PhysicalActivities() {
           ))}
         </View>
       </LinearGradient>
-    </View >
+    </View>
   );
 }
+
 const styles = StyleSheet.create({
   bgcontainer: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     height: "100%",
   },
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
   },
   gridContainer: {
+    marginTop: 10,
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '95%',
-    height: '95%',
+    width: '90%',
   },
   gridItem: {
     shadowColor: 'rgba(0, 0, 0, 0.24)',
@@ -110,8 +132,8 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 5,
     textAlign: 'center',
-    width: 150,
-    height: 150,
+    width: 130,
+    height: 130,
     justifyContent: 'center',
     alignItems: 'center',
     margin: 10,
@@ -120,7 +142,7 @@ const styles = StyleSheet.create({
   },
   navText: {
     textAlign: 'center',
-    fontSize: 22,
+    fontSize: 20,
     fontWeight: 'bold',
     color: '#333',
   },

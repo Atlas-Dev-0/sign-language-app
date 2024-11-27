@@ -109,6 +109,11 @@ const styles = StyleSheet.create({
     height: '95%',
   },
   gridItem: {
+    shadowColor: 'rgba(0, 0, 0, 0.24)',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.24,
+    shadowRadius: 8,
+    elevation: 5,
     width: 70,
     height: 70,
     justifyContent: 'center',

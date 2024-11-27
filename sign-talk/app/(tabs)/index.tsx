@@ -9,6 +9,8 @@ import GreetingsAndPhrases from '../../screens/greetings_and_phrases';
 import Animals from '../../screens/animals';
 import Quiz from '../../screens/quiz';
 import PhysicalActivities from '../../screens/physicalActivities';
+import PeopleScreen from '../../screens/peopleScreen';
+import ColorsScreen from '../../screens/colorsScreen';
 import ImageScreens from '../../screens/imageScreens';
 import VideoScreens from '../../screens/videoScreens';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -22,7 +24,7 @@ export default function HomeScreen() {
         header: ({ options }) => (
           <View style={styles.header}>
             {/* Back Button */}
-            <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+            <TouchableOpacity activeOpacity={1} onPress={() => navigation.goBack()} style={styles.backButton}>
               <Text style={styles.backIcon}>▶</Text>
               <Text style={styles.backText}>Categories</Text>
             </TouchableOpacity>
@@ -44,7 +46,8 @@ export default function HomeScreen() {
       <Stack.Screen name="Days" component={Days} />
       <Stack.Screen name="Greetings And Phrases" component={GreetingsAndPhrases} />
       <Stack.Screen name="Physical Activities" component={PhysicalActivities} />
-      <Stack.Screen name="People" component={PhysicalActivities} />
+      <Stack.Screen name="People" component={PeopleScreen} />
+      <Stack.Screen name="Colors" component={ColorsScreen} />
       <Stack.Screen name="Animals" component={Animals} />
       <Stack.Screen name="Sign Preview" component={ImageScreens} />
       <Stack.Screen name="Sign Video" component={VideoScreens} />
@@ -55,7 +58,7 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   header: {
-    height: 100,
+    height: 80,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',

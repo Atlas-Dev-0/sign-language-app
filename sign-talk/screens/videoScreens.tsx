@@ -1,10 +1,11 @@
 import React, { useState, useRef } from 'react';
-import { StyleSheet } from 'react-native';
+import { View, ScrollView, StyleSheet, Image } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import { Video, ResizeMode, AVPlaybackStatus } from 'expo-av';
 import * as ScreenOrientation from 'expo-screen-orientation';
+import { LinearGradient } from 'expo-linear-gradient';
 
 // Define the type for the route params
 type RootStackParamList = {
@@ -18,7 +19,6 @@ export default function VideoScreen() {
   const route = useRoute<SignPreviewRouteProp>();
   const { video, title, description } = route.params; // Retrieve the video, title, and description from route params
   const [status, setStatus] = useState<AVPlaybackStatus | undefined>(undefined); // Use AVPlaybackStatus type
-
 
   const onFullscreenUpdate = async ({ fullscreenUpdate }: { fullscreenUpdate: number }) => {
     switch (fullscreenUpdate) {
@@ -36,32 +36,39 @@ export default function VideoScreen() {
   };
 
   return (
-    <ThemedView style={styles.container}>
-      <ThemedView style={styles.card}>
-        <Video
-          style={styles.video}
-          source={video}
-          resizeMode={ResizeMode.COVER}
-          useNativeControls // Enable native controls
-          isLooping
-          onPlaybackStatusUpdate={(status) => setStatus(() => status)}
-          onFullscreenUpdate={onFullscreenUpdate}
-        />
-        <ThemedView style={styles.textContainer}>
-          <ThemedText style={styles.title}>{title}</ThemedText>
-          <ThemedText style={styles.subtitle}>Instructions:</ThemedText>
-          <ThemedText style={styles.description}>{description}</ThemedText>
-        </ThemedView>
-      </ThemedView>
-    </ThemedView>
+    <View style={styles.container}>
+      <LinearGradient
+        style={styles.container}
+        colors={["#ff0070", "#6fb7ff"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 1 }}
+      >
+        <View style={styles.card}>
+          <Video
+            style={styles.video}
+            source={video}
+            resizeMode={ResizeMode.COVER}
+            useNativeControls // Enable native controls
+            isLooping
+            onPlaybackStatusUpdate={(status) => setStatus(() => status)}
+            onFullscreenUpdate={onFullscreenUpdate}
+          />
+          <View style={styles.textContainer}>
+            <ThemedText style={styles.title}>{title}</ThemedText>
+            <ThemedText style={styles.subtitle}>{description}</ThemedText>
+          </View>
+        </View>
+      </LinearGradient>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // Make sure the container fills the screen
+    flex: 1,
     alignItems: 'center',
-    backgroundColor: '#FFDD68',
+    justifyContent: 'flex-start',
+    height: "100%",
   },
   card: {
     marginTop: 20,
@@ -82,6 +89,9 @@ const styles = StyleSheet.create({
     paddingBottom: 20, // Add padding at the bottom for better spacing
   },
   video: {
+    borderWidth: 4,
+    borderRadius: 20,
+    borderColor: 'white',
     width: "100%", // Set width to fill the card
     height: 200, // Set a fixed height for the video, adjust as needed
   },
@@ -105,15 +115,11 @@ const styles = StyleSheet.create({
     lineHeight: 50, // Adjust line height as needed
   },
   subtitle: {
+    textAlign: 'center',
     marginTop: 31,
     marginBottom: 21,
     fontSize: 21,
     fontWeight: 'bold',
     color: '#001',
-  },
-  description: {
-    fontSize: 17,
-    color: '#334',
-    textAlign: 'center',
   },
 });
