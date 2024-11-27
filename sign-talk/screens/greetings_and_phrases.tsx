@@ -62,7 +62,6 @@ const video_data: Record<string, VideoData> = {
 export default function GreetingsAndPhrasesScreen() {
   const navigation = useNavigation<NavigationProp>();
   const videoKeys = Object.keys(video_data) as (keyof typeof video_data)[];
-
   return (
     <ThemedView style={styles.FullScreenContainer}>
       <ThemedView style={styles.container}>
@@ -87,43 +86,11 @@ export default function GreetingsAndPhrasesScreen() {
     </ThemedView>
   );
 }
-
 const styles = StyleSheet.create({
-  FullScreenContainer: {
-    flex: 1,
-    backgroundColor: '#FFDD67',
-  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#FFDD67',
-  },
-  gridContainer: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '90%',
-    backgroundColor: '#FFDD67',
-  },
-  gridItem: {
-    textAlign: "center",
-    padding: 25,
-    width: 130,
-    height: 120,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 10,
-    borderRadius: 10,
-    backgroundColor: '#FFFFFF',
-  },
-  navText: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: "center",
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#333',
   },
 });

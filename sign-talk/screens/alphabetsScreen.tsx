@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { LinearGradient } from 'expo-linear-gradient';
 import signDescriptions from '../assets/dataset/categories/alphabets/alphabets-data.json'; // Import the JSON file
 
 // Define the type for the navigation stack
@@ -57,9 +58,14 @@ export default function AlphabetsScreen() {
   const nav = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
-    <ThemedView style={styles.FullScreenContainer}>
-      <ThemedView style={styles.container}>
-        <ThemedView style={styles.gridContainer}>
+    <View style={styles.container}>
+      <LinearGradient
+        style={styles.bgcontainer}
+        colors={["#ff0070", "#6fb7ff"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 0, y: 1 }}
+      >
+        <View style={styles.gridContainer}>
           {data.map((item) => (
             <TouchableOpacity
               key={item.letter}
@@ -75,34 +81,36 @@ export default function AlphabetsScreen() {
               <ThemedText style={styles.navText}>{item.letter}</ThemedText>
             </TouchableOpacity>
           ))}
-        </ThemedView>
-      </ThemedView>
-    </ThemedView>
+        </View>
+      </LinearGradient >
+    </View >
   );
 }
 
 
 const styles = StyleSheet.create({
-  FullScreenContainer: {
-    backgroundColor: '#FFDD67',
+  bgcontainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: "100%",
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFDD67',
   },
   gridContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '90%',
-    backgroundColor: '#FFDD67',
+    width: '95%',
+    height: '95%',
   },
   gridItem: {
-    width: 60,
-    height: 60,
+    width: 70,
+    height: 70,
     justifyContent: 'center',
     alignItems: 'center',
     margin: 10,
