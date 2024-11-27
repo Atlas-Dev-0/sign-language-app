@@ -17,14 +17,14 @@ export default function Categories() {
   const nav = useNavigation(); // Get the navigation object
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <LinearGradient
         style={styles.container}
         colors={["#ff0070", "#6fb7ff"]}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
       >
-        <View style={styles.gridContainer}>
+        <ScrollView contentContainerStyle={styles.gridContainer}>
           <TouchableOpacity
             style={styles.gridItem}
             onPress={() => nav.navigate("Alphabets" as never)}
@@ -106,16 +106,16 @@ export default function Categories() {
               style={styles.gridImage}
             />
           </TouchableOpacity>
-        </View>
+        </ScrollView>
       </LinearGradient>
-    </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
     width: "100%",
+    height: "100%",
     justifyContent: "center",
     alignItems: "center",
   },
