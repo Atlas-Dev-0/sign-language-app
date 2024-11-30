@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {
   Modal,
@@ -34,7 +33,7 @@ const getQuizData = () => {
       });
     }
   }
-  return shuffleArray(allQuestions); // Shuffle the questions
+  return shuffleArray(allQuestions);
 };
 
 const quizData = {
@@ -400,7 +399,6 @@ export default function TrueFalse() {
 
   return (
     <View style={styles.bgcontainer}>
-      {/* Start Game Modal */}
       <Modal visible={isGameModalVisible} transparent={true} animationType="slide">
         <View style={styles.modalOverlay}>
           <View style={styles.modalContainer}>
