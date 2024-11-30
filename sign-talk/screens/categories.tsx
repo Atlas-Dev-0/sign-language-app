@@ -11,7 +11,7 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 
-const { width } = Dimensions.get("window");
+const { width, height } = Dimensions.get("window"); // Get the full screen dimensions
 
 export default function Categories() {
   const nav = useNavigation(); // Get the navigation object

@@ -8,6 +8,8 @@ import Days from '../../screens/daysScreen';
 import GreetingsAndPhrases from '../../screens/greetings_and_phrases';
 import Animals from '../../screens/animals';
 import Quiz from '../../screens/quiz';
+import TrueFalse from '../../screens/truefalse';
+import FlashCards from '../../screens/flashcards';
 import PhysicalActivities from '../../screens/physicalActivities';
 import PeopleScreen from '../../screens/peopleScreen';
 import ColorsScreen from '../../screens/colorsScreen';
@@ -52,6 +54,8 @@ export default function HomeScreen() {
       <Stack.Screen name="Sign Preview" component={ImageScreens} />
       <Stack.Screen name="Sign Video" component={VideoScreens} />
       <Stack.Screen name="Quiz" component={Quiz} />
+      <Stack.Screen name="True or False" component={TrueFalse} />
+      <Stack.Screen name="Flash Cards" component={FlashCards} />
     </Stack.Navigator >
   );
 }
