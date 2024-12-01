@@ -399,6 +399,7 @@ export default function TrueFalse() {
 
   return (
     <View style={styles.bgcontainer}>
+
       <Modal visible={isGameModalVisible} transparent={true} animationType="slide">
         <View style={styles.modalOverlay}>
           <View style={styles.modalContainer}>

@@ -48,6 +48,66 @@ const video_data: Record<string, VideoData> = {
     title: 'Walking',
     description: 'Extend both hands and move them alternately in front of you, as if taking steps in place.',
   },
+  Balance: {
+    video: require('../assets/images/categories/physical_activities/balance.mp4'),
+    title: 'Balance',
+    description: 'Stand on one leg with arms stretched out to the sides, mimicking a balancing motion.',
+  },
+  Cleaning: {
+    video: require('../assets/images/categories/physical_activities/cleaning.mp4'),
+    title: 'Cleaning',
+    description: 'Use both hands to mimic wiping a surface in a circular motion.',
+  },
+  Climbing: {
+    video: require('../assets/images/categories/physical_activities/climbing.mp4'),
+    title: 'Climbing',
+    description: 'Use both hands alternately in a pulling motion, as if climbing a ladder.',
+  },
+  Crawl: {
+    video: require('../assets/images/categories/physical_activities/crawl.mp4'),
+    title: 'Crawl',
+    description: 'Position both hands palm down and move them forward alternately, mimicking crawling.',
+  },
+  FollowTheLeader: {
+    video: require('../assets/images/categories/physical_activities/follow the leader.mp4'),
+    title: 'Follow the Leader',
+    description: 'Point forward with one hand and mimic walking behind, as if following someone.',
+  },
+  FreezeDance: {
+    video: require('../assets/images/categories/physical_activities/freeze dance.mp4'),
+    title: 'Freeze Dance',
+    description: 'Dance freely with both hands raised, then pause suddenly, mimicking a freeze.',
+  },
+  Holding: {
+    video: require('../assets/images/categories/physical_activities/holding.mp4'),
+    title: 'Holding',
+    description: 'Clasp both hands together, mimicking holding an object securely.',
+  },
+  HulaHooping: {
+    video: require('../assets/images/categories/physical_activities/hula hooping.mp4'),
+    title: 'Hula Hooping',
+    description: 'Place hands on hips and rotate in a circular motion, mimicking hula hooping.',
+  },
+  Planting: {
+    video: require('../assets/images/categories/physical_activities/planting.mp4'),
+    title: 'Planting',
+    description: 'Use both hands to mimic digging a hole and planting a seed.',
+  },
+  Stretching: {
+    video: require('../assets/images/categories/physical_activities/stretching.mp4'),
+    title: 'Stretching',
+    description: 'Extend both arms upwards or sideways, as if reaching for something.',
+  },
+  Swimming: {
+    video: require('../assets/images/categories/physical_activities/swimming.mp4'),
+    title: 'Swimming',
+    description: 'Move both arms alternately in a wide circular motion, as if swimming.',
+  },
+  Throwing: {
+    video: require('../assets/images/categories/physical_activities/throwing.mp4'),
+    title: 'Throwing',
+    description: 'Hold one hand back and then thrust it forward, mimicking throwing a ball.',
+  },
 };
 
 export default function PhysicalActivities() {
@@ -96,7 +156,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '95%',
-    height: '95%',
   },
   gridItem: {
     shadowColor: 'rgba(0, 0, 0, 0.24)',
